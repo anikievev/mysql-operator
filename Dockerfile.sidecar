@@ -60,6 +60,10 @@ RUN apt-get update \
     && mkdir -p /usr/share/src \
     && wget https://github.com/maxbube/mydumper/archive/v0.9.5.tar.gz -O /usr/share/src/mydumper-v0.9.5.tar.gz
 
+RUN apt-get update && apt-get install  -y python python-pip
+#USER mysql
+RUN pip install awscli --upgrade 
+
 
 USER mysql
 
